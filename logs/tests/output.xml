@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1 (Python 3.9.6 on win32)" generated="20210819 18:27:31.504" rpa="false" schemaversion="2">
+<suite id="s1" name="Suite" source="C:\Users\raylla.souza\Desktop\projetos_robot\appium_robot_framework\nuclone\tests\suite.robot">
+<test id="s1-t1" name="Cenario 01: Ver meu saldo">
+<kw name="Abrir App" library="base" type="SETUP">
+<kw name="Open Application" library="AppiumLibrary">
+<arg>http://localhost:4723/wd/hub</arg>
+<arg>automationName=UiAutomator2</arg>
+<arg>platformName=Android</arg>
+<arg>deviceName=Celular</arg>
+<arg>app=${EXECDIR}/app/nuclone.apk</arg>
+<arg>udid=emulator-5554</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<status status="PASS" starttime="20210819 18:27:31.638" endtime="20210819 18:27:41.391"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>accessibility_id=card-hero</arg>
+<arg>15</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" starttime="20210819 18:27:41.391" endtime="20210819 18:27:47.603"/>
+</kw>
+<status status="PASS" starttime="20210819 18:27:31.638" endtime="20210819 18:27:47.603"/>
+</kw>
+<kw name="Mostra saldo" library="steps">
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${btn_balance}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20210819 18:27:47.605" level="INFO">Clicking element 'accessibility_id=show-balance'.</msg>
+<status status="PASS" starttime="20210819 18:27:47.604" endtime="20210819 18:27:47.683"/>
+</kw>
+<status status="PASS" starttime="20210819 18:27:47.603" endtime="20210819 18:27:47.683"/>
+</kw>
+<kw name="Meu saldo deve ser de" library="steps">
+<arg>R$ 5.500,00</arg>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${user_balance}</arg>
+<arg>10</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" starttime="20210819 18:27:47.684" endtime="20210819 18:27:47.733"/>
+</kw>
+<kw name="Element Text Should Be" library="AppiumLibrary">
+<arg>${user_balance}</arg>
+<arg>${saldo}</arg>
+<doc>Verifies element identified by ``locator`` exactly contains text ``expected``.</doc>
+<msg timestamp="20210819 18:27:47.735" level="INFO">Verifying element 'accessibility_id=user-balance' contains exactly text 'R$ 5.500,00'.</msg>
+<status status="PASS" starttime="20210819 18:27:47.733" endtime="20210819 18:27:48.355"/>
+</kw>
+<status status="PASS" starttime="20210819 18:27:47.683" endtime="20210819 18:27:48.355"/>
+</kw>
+<kw name="Fechar App" library="base" type="TEARDOWN">
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210819 18:27:48.531" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-1.png"&gt;&lt;img src="appium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210819 18:27:48.355" endtime="20210819 18:27:48.531"/>
+</kw>
+<kw name="Close Application" library="AppiumLibrary">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="PASS" starttime="20210819 18:27:48.531" endtime="20210819 18:27:48.896"/>
+</kw>
+<status status="PASS" starttime="20210819 18:27:48.355" endtime="20210819 18:27:48.897"/>
+</kw>
+<status status="PASS" starttime="20210819 18:27:31.638" endtime="20210819 18:27:48.897"/>
+</test>
+<test id="s1-t2" name="Cenario 02: Acessar Perfil e Configuração NuConta">
+<kw name="Abrir App" library="base" type="SETUP">
+<kw name="Open Application" library="AppiumLibrary">
+<arg>http://localhost:4723/wd/hub</arg>
+<arg>automationName=UiAutomator2</arg>
+<arg>platformName=Android</arg>
+<arg>deviceName=Celular</arg>
+<arg>app=${EXECDIR}/app/nuclone.apk</arg>
+<arg>udid=emulator-5554</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<status status="PASS" starttime="20210819 18:27:48.897" endtime="20210819 18:27:58.789"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>accessibility_id=card-hero</arg>
+<arg>15</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" starttime="20210819 18:27:58.789" endtime="20210819 18:28:04.923"/>
+</kw>
+<status status="PASS" starttime="20210819 18:27:48.897" endtime="20210819 18:28:04.923"/>
+</kw>
+<kw name="Arrastar modal de saldo" library="steps">
+<kw name="Swipe By Percent" library="AppiumLibrary">
+<arg>50</arg>
+<arg>50</arg>
+<arg>50</arg>
+<arg>80</arg>
+<doc>Swipe from one percent of the screen to another percent, for an optional duration.
+Normal swipe fails to scale for different screen resolutions, this can be avoided using percent.</doc>
+<status status="PASS" starttime="20210819 18:28:04.923" endtime="20210819 18:28:06.302"/>
+</kw>
+<kw name="Page Should Contain Text" library="AppiumLibrary">
+<arg>${txt_logout}</arg>
+<doc>Verifies that current page contains `text`.</doc>
+<msg timestamp="20210819 18:28:06.447" level="INFO">Current page contains text 'SAIR DO APP'.</msg>
+<status status="PASS" starttime="20210819 18:28:06.302" endtime="20210819 18:28:06.447"/>
+</kw>
+<status status="PASS" starttime="20210819 18:28:04.923" endtime="20210819 18:28:06.447"/>
+</kw>
+<kw name="Acessar Perfil" library="steps">
+<kw name="Click Text" library="AppiumLibrary">
+<arg>${txt_pefil}</arg>
+<doc>Click text identified by ``text``.</doc>
+<status status="PASS" starttime="20210819 18:28:06.449" endtime="20210819 18:28:06.582"/>
+</kw>
+<kw name="Wait Until Page Contains" library="AppiumLibrary">
+<arg>${txt_validacao_perfil}</arg>
+<doc>Waits until `text` appears on current page.</doc>
+<status status="PASS" starttime="20210819 18:28:06.582" endtime="20210819 18:28:08.147"/>
+</kw>
+<status status="PASS" starttime="20210819 18:28:06.447" endtime="20210819 18:28:08.147"/>
+</kw>
+<kw name="Voltar ao menu" library="steps">
+<kw name="Click Element" library="AppiumLibrary">
+<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20210819 18:28:08.149" level="INFO">Clicking element 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup'.</msg>
+<status status="PASS" starttime="20210819 18:28:08.147" endtime="20210819 18:28:08.247"/>
+</kw>
+<kw name="Page Should Contain Text" library="AppiumLibrary">
+<arg>${txt_logout}</arg>
+<doc>Verifies that current page contains `text`.</doc>
+<msg timestamp="20210819 18:28:08.353" level="INFO">Current page contains text 'SAIR DO APP'.</msg>
+<status status="PASS" starttime="20210819 18:28:08.247" endtime="20210819 18:28:08.353"/>
+</kw>
+<status status="PASS" starttime="20210819 18:28:08.147" endtime="20210819 18:28:08.353"/>
+</kw>
+<kw name="Acessar Configurar NuConta" library="steps">
+<kw name="Click Text" library="AppiumLibrary">
+<arg>${txt_conf_nuconta}</arg>
+<doc>Click text identified by ``text``.</doc>
+<status status="PASS" starttime="20210819 18:28:08.353" endtime="20210819 18:28:09.698"/>
+</kw>
+<kw name="Wait Until Page Contains" library="AppiumLibrary">
+<arg>${txt_validacao_nuconta}</arg>
+<doc>Waits until `text` appears on current page.</doc>
+<status status="PASS" starttime="20210819 18:28:09.698" endtime="20210819 18:28:11.133"/>
+</kw>
+<status status="PASS" starttime="20210819 18:28:08.353" endtime="20210819 18:28:11.133"/>
+</kw>
+<kw name="Voltar ao menu" library="steps">
+<kw name="Click Element" library="AppiumLibrary">
+<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20210819 18:28:11.135" level="INFO">Clicking element 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup'.</msg>
+<status status="PASS" starttime="20210819 18:28:11.134" endtime="20210819 18:28:11.214"/>
+</kw>
+<kw name="Page Should Contain Text" library="AppiumLibrary">
+<arg>${txt_logout}</arg>
+<doc>Verifies that current page contains `text`.</doc>
+<msg timestamp="20210819 18:28:11.304" level="INFO">Current page contains text 'SAIR DO APP'.</msg>
+<status status="PASS" starttime="20210819 18:28:11.214" endtime="20210819 18:28:11.304"/>
+</kw>
+<status status="PASS" starttime="20210819 18:28:11.133" endtime="20210819 18:28:11.304"/>
+</kw>
+<kw name="Fechar App" library="base" type="TEARDOWN">
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210819 18:28:11.539" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-2.png"&gt;&lt;img src="appium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210819 18:28:11.305" endtime="20210819 18:28:11.539"/>
+</kw>
+<kw name="Close Application" library="AppiumLibrary">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="PASS" starttime="20210819 18:28:11.539" endtime="20210819 18:28:11.914"/>
+</kw>
+<status status="PASS" starttime="20210819 18:28:11.304" endtime="20210819 18:28:11.914"/>
+</kw>
+<status status="PASS" starttime="20210819 18:27:48.897" endtime="20210819 18:28:11.914"/>
+</test>
+<test id="s1-t3" name="Cenario 03: Fazer cobrança">
+<kw name="Abrir App" library="base" type="SETUP">
+<kw name="Open Application" library="AppiumLibrary">
+<arg>http://localhost:4723/wd/hub</arg>
+<arg>automationName=UiAutomator2</arg>
+<arg>platformName=Android</arg>
+<arg>deviceName=Celular</arg>
+<arg>app=${EXECDIR}/app/nuclone.apk</arg>
+<arg>udid=emulator-5554</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<status status="PASS" starttime="20210819 18:28:11.915" endtime="20210819 18:28:21.786"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>accessibility_id=card-hero</arg>
+<arg>15</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" starttime="20210819 18:28:21.786" endtime="20210819 18:28:28.150"/>
+</kw>
+<status status="PASS" starttime="20210819 18:28:11.915" endtime="20210819 18:28:28.150"/>
+</kw>
+<kw name="Acessar menu Cobrar" library="steps">
+<kw name="Click Text" library="AppiumLibrary">
+<arg>${txt_cobrar}</arg>
+<doc>Click text identified by ``text``.</doc>
+<status status="PASS" starttime="20210819 18:28:28.151" endtime="20210819 18:28:28.296"/>
+</kw>
+<kw name="Wait Until Page Contains" library="AppiumLibrary">
+<arg>${txt_validacao_cobranca}</arg>
+<doc>Waits until `text` appears on current page.</doc>
+<status status="PASS" starttime="20210819 18:28:28.296" endtime="20210819 18:28:29.825"/>
+</kw>
+<status status="PASS" starttime="20210819 18:28:28.151" endtime="20210819 18:28:29.826"/>
+</kw>
+<kw name="Fazer cobrança de R$" library="steps">
+<arg>215,70</arg>
+<kw name="Clear Text" library="AppiumLibrary">
+<arg>${cobrar}</arg>
+<doc>Clears the text field identified by `locator`.</doc>
+<msg timestamp="20210819 18:28:29.827" level="INFO">Clear text field 'accessibility_id=to-charge'</msg>
+<status status="PASS" starttime="20210819 18:28:29.826" endtime="20210819 18:28:29.873"/>
+</kw>
+<kw name="Input Value" library="AppiumLibrary">
+<arg>${cobrar}</arg>
+<arg>${valor}</arg>
+<doc>Sets the given value into text field identified by `locator`. This is an IOS only keyword, input value makes use of set_value</doc>
+<msg timestamp="20210819 18:28:29.875" level="INFO">Setting text '215,70' into text field 'accessibility_id=to-charge'</msg>
+<status status="PASS" starttime="20210819 18:28:29.873" endtime="20210819 18:28:30.523"/>
+</kw>
+<status status="PASS" starttime="20210819 18:28:29.826" endtime="20210819 18:28:30.523"/>
+</kw>
+<kw name="Voltar a pagina inicial" library="steps">
+<kw name="Click Element" library="AppiumLibrary">
+<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup[1]/android.widget.TextView</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20210819 18:28:30.526" level="INFO">Clicking element 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup[1]/android.widget.TextView'.</msg>
+<status status="PASS" starttime="20210819 18:28:30.524" endtime="20210819 18:28:31.130"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>accessibility_id=card-hero</arg>
+<arg>15</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" starttime="20210819 18:28:31.130" endtime="20210819 18:28:32.488"/>
+</kw>
+<status status="PASS" starttime="20210819 18:28:30.523" endtime="20210819 18:28:32.489"/>
+</kw>
+<kw name="Fechar App" library="base" type="TEARDOWN">
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210819 18:28:32.665" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-3.png"&gt;&lt;img src="appium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210819 18:28:32.490" endtime="20210819 18:28:32.665"/>
+</kw>
+<kw name="Close Application" library="AppiumLibrary">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="PASS" starttime="20210819 18:28:32.665" endtime="20210819 18:28:33.017"/>
+</kw>
+<status status="PASS" starttime="20210819 18:28:32.489" endtime="20210819 18:28:33.018"/>
+</kw>
+<status status="PASS" starttime="20210819 18:28:11.915" endtime="20210819 18:28:33.018"/>
+</test>
+<test id="s1-t4" name="Cenario 04: Acessar menu Indicar amigos e menu Bloquear Cartão">
+<kw name="Abrir App" library="base" type="SETUP">
+<kw name="Open Application" library="AppiumLibrary">
+<arg>http://localhost:4723/wd/hub</arg>
+<arg>automationName=UiAutomator2</arg>
+<arg>platformName=Android</arg>
+<arg>deviceName=Celular</arg>
+<arg>app=${EXECDIR}/app/nuclone.apk</arg>
+<arg>udid=emulator-5554</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<status status="PASS" starttime="20210819 18:28:33.019" endtime="20210819 18:28:43.433"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>accessibility_id=card-hero</arg>
+<arg>15</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" starttime="20210819 18:28:43.434" endtime="20210819 18:28:49.594"/>
+</kw>
+<status status="PASS" starttime="20210819 18:28:33.018" endtime="20210819 18:28:49.594"/>
+</kw>
+<kw name="Acessar menu Indicar amigos" library="steps">
+<kw name="Click Text" library="AppiumLibrary">
+<arg>${txt_ind_amigos}</arg>
+<doc>Click text identified by ``text``.</doc>
+<status status="PASS" starttime="20210819 18:28:49.595" endtime="20210819 18:28:49.748"/>
+</kw>
+<kw name="Wait Until Page Contains" library="AppiumLibrary">
+<arg>${txt_validacao_ind_amigos}</arg>
+<arg>15</arg>
+<doc>Waits until `text` appears on current page.</doc>
+<status status="PASS" starttime="20210819 18:28:49.748" endtime="20210819 18:28:51.255"/>
+</kw>
+<status status="PASS" starttime="20210819 18:28:49.595" endtime="20210819 18:28:51.255"/>
+</kw>
+<kw name="Voltar a pagina inicial" library="steps">
+<kw name="Click Element" library="AppiumLibrary">
+<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup[1]/android.widget.TextView</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20210819 18:28:51.258" level="INFO">Clicking element 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup[1]/android.widget.TextView'.</msg>
+<status status="PASS" starttime="20210819 18:28:51.255" endtime="20210819 18:28:51.365"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>accessibility_id=card-hero</arg>
+<arg>15</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" starttime="20210819 18:28:51.365" endtime="20210819 18:28:52.810"/>
+</kw>
+<status status="PASS" starttime="20210819 18:28:51.255" endtime="20210819 18:28:52.810"/>
+</kw>
+<kw name="Acessar menu Bloquear Cartão" library="steps">
+<kw name="Swipe By Percent" library="AppiumLibrary">
+<arg>90</arg>
+<arg>85</arg>
+<arg>10</arg>
+<arg>85</arg>
+<doc>Swipe from one percent of the screen to another percent, for an optional duration.
+Normal swipe fails to scale for different screen resolutions, this can be avoided using percent.</doc>
+<status status="PASS" starttime="20210819 18:28:52.811" endtime="20210819 18:28:54.100"/>
+</kw>
+<kw name="Click Text" library="AppiumLibrary">
+<arg>${txt_block_card}</arg>
+<doc>Click text identified by ``text``.</doc>
+<status status="PASS" starttime="20210819 18:28:54.100" endtime="20210819 18:28:54.162"/>
+</kw>
+<kw name="Wait Until Page Contains" library="AppiumLibrary">
+<arg>${btn_block_card}</arg>
+<arg>15</arg>
+<doc>Waits until `text` appears on current page.</doc>
+<status status="PASS" starttime="20210819 18:28:54.162" endtime="20210819 18:28:55.567"/>
+</kw>
+<status status="PASS" starttime="20210819 18:28:52.810" endtime="20210819 18:28:55.567"/>
+</kw>
+<kw name="Fechar App" library="base" type="TEARDOWN">
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210819 18:28:55.758" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-4.png"&gt;&lt;img src="appium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210819 18:28:55.568" endtime="20210819 18:28:55.758"/>
+</kw>
+<kw name="Close Application" library="AppiumLibrary">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="PASS" starttime="20210819 18:28:55.758" endtime="20210819 18:28:56.141"/>
+</kw>
+<status status="PASS" starttime="20210819 18:28:55.567" endtime="20210819 18:28:56.141"/>
+</kw>
+<status status="PASS" starttime="20210819 18:28:33.018" endtime="20210819 18:28:56.141"/>
+</test>
+<doc>Suite para testes mobile</doc>
+<status status="PASS" starttime="20210819 18:27:31.505" endtime="20210819 18:28:56.142"/>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="4" fail="0" skip="0" id="s1" name="Suite">Suite</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
